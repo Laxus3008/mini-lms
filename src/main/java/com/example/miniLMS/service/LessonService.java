@@ -36,6 +36,7 @@ public class LessonService {
 
         // Save only through the module to avoid duplicate saves
         moduleRepository.save(found);
+        lessonRepository.save(lesson);
         return lesson;
     }
 
@@ -81,15 +82,15 @@ public class LessonService {
         }
 
         // For TEXT type, just check if content exists
-        if (lesson.getType() == LessonType.TEXT) {
-            return;
-        }
-
-        // For uploaded files, verify file exists in upload directory
-        if (lesson.getType() == LessonType.VIDEO ||
-            lesson.getType() == LessonType.IMAGE ||
-            lesson.getType() == LessonType.PDF) {
-            return;
-        }
+//        if (lesson.getType() == LessonType.TEXT) {
+//            return;
+//        }
+//
+//        // For uploaded files, verify file exists in upload directory
+//        if (lesson.getType() == LessonType.VIDEO ||
+//            lesson.getType() == LessonType.IMAGE ||
+//            lesson.getType() == LessonType.PDF) {
+//            return;
+//        }
     }
 }
