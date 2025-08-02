@@ -74,6 +74,12 @@ mvn spring-boot:run
 
 The application will start on `http://localhost:8080`
 
+## Assumption made while calculation of the progress
+ - While making the request of fetching the progress and marking the lesson as complete we need to provide a username as parameter.
+ - Now this username needs to be the same for both all the requests that are made related to the progress.
+ - This is because there is a schema designed to store the data of the completed lesson and it require a username to do so.
+ - Also we use nesting of functions to calculate the course progress -> module progress -> lesson progress.
+
 ### API Documentation
 
 Access the Swagger UI documentation at:
